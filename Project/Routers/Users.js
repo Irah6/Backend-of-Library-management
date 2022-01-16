@@ -10,6 +10,10 @@ router.get("/:Reg_no",async function(req,res){
     var Users = await User.findOne({Reg_no:req.params.Reg_no})
         res.json(Users)  
 })
+router.get("/:Reg_no/:field",async function(req,res){
+   var field:req.params.field
+    var Users = await User.findOne({Reg_no:req.params.Reg_no},{field:1,_id:0})
+        res.json(Users) })
 router.post("/",async function(req,res){
     const user = new User({
         Name:req.body.Name,
