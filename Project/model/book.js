@@ -1,10 +1,13 @@
 const mongoose = require('mongoose')
 const bookschema = new mongoose.Schema({
      Sno:{
-        type: Number
+        type: Number,
+        required:true,
+        unique:true
     },
     BookName:{
-        type: String
+        type: String,
+        unique:true
     },
     Authorname :{
         type: String
