@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 const userschema = new mongoose.Schema({
     Name:{
-        type: String
+        type: String,
+        unique:true,
+        required:true
     },
     Reg_no:{
         type: Number
@@ -16,7 +18,8 @@ const userschema = new mongoose.Schema({
         type:Date
     },
     BookName:{
-        type: String
+        type: String,
+        unique: true
     }
 })
 module.exports = mongoose.model('user',userschema)
